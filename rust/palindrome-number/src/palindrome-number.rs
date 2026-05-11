@@ -1,5 +1,6 @@
 fn main() {
-    println!("{}", is_palindrome(100));
+    let x:i32 = 0;
+    println!("{}", is_palindrome(x));
 }
 
 pub fn is_palindrome(x: i32) -> bool {
