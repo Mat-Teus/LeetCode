@@ -1,6 +1,6 @@
 fn main() {
-    let vec1 = vec![1,2,8,20, 30];
-    let vec2 = vec![3,4,5,10, 15];
+    let vec1 = vec![1,2,8,20,30];
+    let vec2 = vec![3,4,5,10,15];
 
     println!("{}", find_median_sorted_arrays(vec1, vec2));
 }
@@ -33,7 +33,6 @@ pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
     if vec3.len() %2 != 0{
         return *vec3.get(vec3.len()/2).unwrap() as f64;
     }else{
-        println!("{:?}", vec3);
-        return (*vec3.get(vec3.len()/2).unwrap() as f64 + *vec3.get(vec3.len()/2 - 1).unwrap() as f64)/2 as f64;
+        return (*vec3.get(vec3.len()/2).unwrap() as f64 + *vec3.get(vec3.len()/2 - 1).unwrap() as f64)/2.0;
     }
 }
