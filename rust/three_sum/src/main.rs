@@ -14,18 +14,6 @@ pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
 
     while ptr_still < nums.len(){
         while ptr_one < ptr_two{
-            if ptr_one == ptr_still as i32{
-                ptr_one+=1;
-            }
-
-            if ptr_two == ptr_still as i32{
-                ptr_two-=1;
-            }
-
-            if ptr_two == ptr_one{
-                break;
-            }
-
             if ptr_two < 0 || ptr_one >= nums.len() as i32{
                 break;
             }
@@ -41,7 +29,7 @@ pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
             }
         }
         ptr_still+=1;
-        ptr_one = 0;
+        ptr_one = ptr_still as i32 + 1;
         ptr_two = (nums.len() - 1) as i32;
     }
 
