@@ -12,6 +12,7 @@ pub fn two_sum(numbers: Vec<i32>, target: i32) -> Vec<i32> {
 
     while ptr_one < ptr_two{
         let sum = numbers[ptr_one] + numbers[ptr_two];
+        
         if sum > target{
             ptr_two-=1;
         }else if sum < target{
