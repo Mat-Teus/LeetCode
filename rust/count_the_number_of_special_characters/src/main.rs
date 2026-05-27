@@ -9,7 +9,7 @@ pub fn number_of_special_chars(word: String) -> i32 {
     let mut count = 0;
     let mut i = 0;
 
-    while i < chars.len(){
+    while i < chars.len() - 1{
         let mut j= i + 1;
 
         while j < chars.len(){
