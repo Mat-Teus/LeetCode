@@ -7,18 +7,21 @@ fn main() {
 pub fn min_element(nums: Vec<i32>) -> i32 {
     let mut sum = 0;
     let mut minimum = i32::MAX;
+    let mut i = 0;
 
-    for i in 0..nums.len(){
-        let num = nums[i];
-        let digits:Vec<i32> = num.to_string().chars().map(|d| d.to_digit(10).unwrap() as i32).collect();
-        for j in 0..digits.len(){
-            sum+=digits[j];
+    while i < nums.len(){
+        let mut j = nums[i];
+
+        while j > 0{
+            sum+=j%10;
+            j = j/10;
         }
 
-        if sum < minimum{
+        if minimum > sum{
             minimum = sum;
         }
 
+        i+=1;
         sum = 0;
     }
 
