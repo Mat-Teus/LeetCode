@@ -6,20 +6,20 @@ fn main() {
 }
 
 pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
-    let mut result: i32 = 0;
-    let mut solution: Vec<i32> = Vec::new();
-    let mut index2 = 1;
+    let mut hash = HashMap::new();
+    let mut solution = Vec::new();
 
-    for i in 0..nums.len() - 1 {
-        for j in index2..nums.len(){
-            result = nums[i] + nums[j];
-            if result == target{
-                solution.push((i) as i32);
-                solution.push((j) as i32);
-            }
+    for i in 0..nums.len(){
+        let complement = target - nums[i];
+
+        if hash.contains_key(&complement){
+            solution.push(*hash.get(&complement).unwrap() as i32);
+            solution.push(i as i32);
+            return solution;
         }
 
-        index2 += 1;
+            
+        hash.insert(nums[i], i);
     }
 
     return solution;
