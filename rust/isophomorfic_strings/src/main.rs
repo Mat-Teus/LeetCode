@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
 fn main() {
-    let s = String::from("papar");
+    let s = String::from("paper");
     let t = String::from("title");
 
     println!("{}", is_isomorphic(s, t));
