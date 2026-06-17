@@ -4,9 +4,7 @@ fn main() {
     println!("{}", find_content_children(g, s));
 }
 
-pub fn find_content_children(g: Vec<i32>, s: Vec<i32>) -> i32 {
-    let mut g = g;
-    let mut s = s;
+pub fn find_content_children(mut g: Vec<i32>, mut s: Vec<i32>) -> i32 {
     let mut ptr_one = 0;
     let mut ptr_two = 0;
     let mut count = 0;
