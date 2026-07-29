@@ -16,7 +16,7 @@ pub fn max_product(nums: Vec<i32>) -> i32 {
         let prev_min = min_value;
 
         max_value = max(nums[i], max(nums[i] * prev_min, nums[i] * prev));
-        min_value = min(nums[i], max(nums[i] * prev, nums[i] * prev_min));
+        min_value = min(nums[i], min(nums[i] * prev, nums[i] * prev_min));
         
         answer = max(answer, max_value);
     }
