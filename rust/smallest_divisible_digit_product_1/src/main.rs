@@ -18,8 +18,6 @@ pub fn smallest_number(n: i32, t: i32) -> i32 {
             product*=digit;
         }
 
-        println!("n = {}, product = {}", answer, product);
-
         if product%t == 0{
             break;
         }else{
